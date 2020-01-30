@@ -1,0 +1,162 @@
+.btn{
+    width:100px;
+    height:100px;
+    background-color: #EDF;
+    line-height:100px;
+    border-radius:50%;
+    transition: transform linear 0.25s;
+    position: relative;
+  }
+  .active{
+    transform:scale(0.5);
+  }
+  .bigger{
+    transform:scale(1.25);
+  }
+  .score{
+   position: absolute;
+   top:100px;
+   font-size: 50px;
+  }
+  
+  .wave {
+    position: absolute;
+    width: 140px;
+    height: 140px;
+    text-align: center;
+    line-height: 100px;
+    font-size: 28px;
+    left: -20px;
+    top: -20px;
+  }
+  
+  .wave .circle {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0;
+  }
+  
+  /* 波纹效果 */
+  .wave.ripple .circle {
+      width: calc(100% - 6px); /* 减去边框的大小 */
+      height: calc(100% - 6px);/* 减去边框的大小 */
+      border: 3px solid #fff;
+  }
+  
+  .wave.ripple .circle:first-child {
+    animation: circle-opacity 0.5s;
+  }
+  
+  .wave.ripple .circle:nth-child(2) {
+    animation: circle-opacity 0.5s;
+    animation-delay: .1s;
+  }
+  
+  .wave.ripple .circle:nth-child(3) {
+     animation: circle-opacity 0.5s;
+    animation-delay: .1s;
+  }
+  
+  .wave.ripple.danger {
+      color: red;
+  }
+  
+  .wave.ripple.danger .circle {
+    border-color: red;
+  }
+  
+  .wave.ripple.warning {
+      color: orange;
+  }
+  
+  .wave.ripple.warning .circle {
+      border-color: orange;
+  }
+  
+  /* 波动效果 */
+  .wave.solid .circle{
+    width: 100%;
+      height: 100%;
+      background: #fff;
+  }
+  
+  .wave.solid .circle:first-child {
+    animation: circle-opacity 2s infinite;
+  }
+  
+  .wave.solid.danger {
+    color: red;
+  }
+  
+  .wave.solid.danger .circle{
+    background: red;
+  }
+  
+  .wave.solid.warning {
+    color: orange;
+  }
+  
+  .wave.solid.warning .circle{
+    background: orange;
+  }
+  
+  @keyframes circle-opacity{
+      from {
+          opacity: 1;
+          transform: scale(0.58);
+      }
+      to {
+          opacity: 0;
+          transform: scale(1);
+      }
+  }
+
+  .count-zero{
+      position: absolute;
+      bottom:30px;
+      left:50%;
+      transform: translateX(-50%);
+      font-size: 50px;
+      color:orange;
+  }
+  
+  .tip{
+    position: absolute;
+    right: 0;
+    top: -40px;
+  }
+
+  .item{
+    font-size: 14px;
+    color: orange;
+}
+.tip {
+    animation: vertical-animation .75s ease-in; 
+    -webkit-animation: vertical-animation .75s ease-in;
+    -moz-animation: vertical-animation .75s ease-in;
+}
+
+.tip .item {
+    animation: hor-animation .75s linear; 
+    -webkit-animation: hor-animation .75s linear;
+    -moz-animation: hor-animation .75s linear;
+}
+
+@keyframes hor-animation { 
+  0% { transform: translateX(0px);opacity:1} 
+  100% { transform: translateX(100px);opacity:0 } 
+}
+@-webkit-keyframes hor-animation { 
+  0% { transform: translateX(0px);opacity:1} 
+  100% { transform: translateX(100px);opacity:0}
+}
+
+@keyframes vertical-animation { 
+  0% { transform: translateY(0px);     } 
+  100% { transform: translateY(-100px); } 
+}
+@-webkit-keyframes vertical-animation { 
+  0% { transform: translateY(0px);     } 
+  100% { transform: translateY(-100px); } 
+}
+
